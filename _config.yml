@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Humans Who Code
-email: michael.bargury@owasp.org
+email: example@example.com
 description: >- # this means to ignore newlines until "baseurl:"
   Welcome to Human Who Code, your go-to destination for all things tech! Whether you're a seasoned developer, a gadget enthusiast, or just curious about the latest tech trends, this blog has something for you. Dive into in-depth reviews of the newest gadgets, discover practical how-to guides and tutorials, and stay updated with the latest news in the technology world. At Human Who Code, we believe in making technology accessible and enjoyable for everyone. Join us on this exciting journey and unlock the endless possibilities of the digital age!
 minimal_mistakes_skin: default
