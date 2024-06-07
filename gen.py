@@ -10,7 +10,7 @@ STRING_LEN = 1
 blog_site_title = "Human Who Code"
 blog_site_description = "A blog focused on exploring the latest trends, technologies, and gadgets in the tech industry."
 prompt_template = """
-Given the following blog site title and description, generate a suitable blog post title, relevant tags, and a brief content outline. Make the title as different as possible from the previous titles also provided as input, in terms of content, and vocabulary and style. The blog post should be written in Markdown format and include a YAML prefix. Only output the Markdown content without any additional descriptions. Make sure you close the yml section at the beginning with a --- before you start writing the content.
+Given the following blog site title and description, generate a suitable blog post title, relevant tags, and a brief content outline. Make the title as different as possible from the previous titles also provided as input, in terms of content, and vocabulary and style . The blog post should be written in Markdown format and include a YAML prefix. Only output the Markdown content without any additional descriptions. Make sure you close the yml section at the beginning with a --- before you start writing the content.
 
 
 **Blog Site Title:** {blog_site_title}
