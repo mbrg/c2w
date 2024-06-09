@@ -1,11 +1,12 @@
 import datetime
+import os
 import random
 import string
 from openai import OpenAI
 import itertools
 
 OPENAI_API_KEY = ""
-STRING_LEN = 1
+STRING_LEN = 3
 
 blog_site_title = "Human Who Code"
 blog_site_description = "A blog focused on exploring the latest trends, technologies, and gadgets in the tech industry."
@@ -85,17 +86,26 @@ def generate_random_date():
 all_titles = []
 for random_string in generate_all_strings(STRING_LEN):
     random_date = generate_random_date().strftime('%Y-%m-%d')
-
+    filename = f"_posts/{random_date}-{random_string}.md"
+    
+    all_random_string = [fname[11:-3] for fname in os.listdir("_posts/")]
+    if random_string in all_random_string:
+        # skip
+        continue
+    
     # Use OpenAI API to generate TITLE and TAGS
     post = generated_blog_content = generate_blog_post(blog_site_title, blog_site_description, prev_titles=all_titles)
     if "---\n\n# Introduction" not in post:
         post = post.replace("\n# Introduction", "---\n\n# Introduction")
     
-    title = post.split("\n")[1].split(": ")[1]
-    all_titles.append(title)
+    try:
+        title = post.split("\n")[1].split(": ")[1]
+        all_titles.append(title)
+    except IndexError:
+        print(f"Skip {random_string} for malformed title.")
+        continue
 
     # Create a new file in _posts/ directory
-    filename = f"_posts/{random_date}-{random_string}.md"
     with open(filename, 'w') as f:
         f.write(post)
     print(f"File {filename} created. {post.split("\n")[1]}.")
