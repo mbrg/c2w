@@ -4,8 +4,9 @@ import random
 import string
 from openai import OpenAI
 import itertools
+from dotenv import load_dotenv
 
-OPENAI_API_KEY = ""
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 STRING_LEN = 3
 
 blog_site_title = "Human Who Code"
