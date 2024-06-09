@@ -62,7 +62,7 @@ plugins:
 analytics:
   provider: "google-gtag"
   google:
-    tracking_id: ""
+    tracking_id: "G-3F0MNCDRWQ"
     anonymize_ip: false # default
 
 defaults:
